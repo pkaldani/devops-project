@@ -21,5 +21,6 @@ pipeline {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
         }
+
     }
 }
