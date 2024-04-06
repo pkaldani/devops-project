@@ -92,7 +92,6 @@ pipeline {
         stage('build app image'){
             steps{
                 script{
-                    sh "sudo usermod -aG docker $USER"
                     dockerImage = docker.build( appRegistry+":$BUILD_NUMBER", "./Docker-files/app/multistage")
                 }
             }
