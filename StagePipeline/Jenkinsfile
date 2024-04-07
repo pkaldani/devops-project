@@ -19,7 +19,7 @@ pipeline {
         registryCredenyial = 'ecr:us-east-1:awscredentional'
         appRegistry = '851725212267.dkr.ecr.us-east-1.amazonaws.com/vporfileappimg'
         vprofileRegistry = 'https://851725212267.dkr.ecr.us-east-1.amazonaws.com'
-        cluser = 'vprostageing'
+        cluster = 'vprostageing'
         service = 'proappstagesvc'
     }
     stages {
