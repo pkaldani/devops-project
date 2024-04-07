@@ -5,14 +5,14 @@ pipeline {
         jdk "OracleJDK8"
     }
     environment {
-        cluser = 'vproprod'
+        cluster = 'vproprod'
         service = 'vproappprodsvc'
     }
     stages {
         stage ('Deploy to Staging')  {
             steps{
                 withAWS(credentials: 'awscredentional', region: 'us-west-1' ) {
-                    sh 'aws esc update-service --cluster ${cluster} --service ${service} --force-new-deployment' 
+                    sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment' 
                 }
             }
         }
