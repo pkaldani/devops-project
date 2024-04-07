@@ -20,7 +20,7 @@ pipeline {
         appRegistry = '851725212267.dkr.ecr.us-east-1.amazonaws.com/vporfileappimg'
         vprofileRegistry = 'https://851725212267.dkr.ecr.us-east-1.amazonaws.com'
         cluster = 'vprostageing'
-        service = 'proappstagesvc'
+        service = 'vproappstagesvc'
     }
     stages {
         stage('Build'){
