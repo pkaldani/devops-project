@@ -19,6 +19,8 @@ pipeline {
         registryCredenyial = 'ecr:us-east-1:awscredentional'
         appRegistry = '851725212267.dkr.ecr.us-east-1.amazonaws.com/vporfileappimg'
         vprofileRegistry = 'https://851725212267.dkr.ecr.us-east-1.amazonaws.com'
+        cluser = 'vprostageing'
+        service = 'proappstagesvc'
     }
     stages {
         stage('Build'){
@@ -105,6 +107,13 @@ pipeline {
                     }
                 }
             }
-        }   
+        }
+        stage ('Deploy to Staging')  {
+            steps{
+                withAWS(credentials: 'awscredentional', region: 'us-west-1' ) {
+                    sh 'aws esc update-service --cluster ${cluster} --service ${service} --force-new-deployment' 
+                }
+            }
+        }
     }
 }
